@@ -1,8 +1,8 @@
-AI-Based Crop Disease Prediction System
+\#AI-Based Crop Disease Prediction System
 
 
 
-About the Project
+\#About the Project
 
 
 
@@ -22,7 +22,7 @@ For the image classification part, I used the PlantVillage dataset and MobileNet
 
 
 
-How the System Works
+\#How the System Works
 
 
 
@@ -46,11 +46,9 @@ The application follows these steps:
 
 
 
-The overall workflow is:
+\#The overall workflow is:
 
 
-
-&#x20; text
 
 Leaf Image
 
@@ -90,7 +88,7 @@ Disease Explanation
 
 
 
-Technologies Used
+\#Technologies Used:
 
 
 
@@ -118,7 +116,7 @@ Technologies Used
 
 
 
-Dataset
+\#Dataset:
 
 
 
@@ -126,7 +124,7 @@ The project uses the PlantVillage dataset for training the image classification 
 
 
 
-The current model supports 15 classes:
+\#The current model supports 15 classes:
 
 
 
@@ -162,7 +160,7 @@ The current model supports 15 classes:
 
 
 
-Model
+\#Model:
 
 
 
@@ -174,7 +172,7 @@ The model uses transfer learning with pretrained ImageNet weights. The pretraine
 
 
 
-The trained model is saved as:
+\#The trained model is saved as:
 
 
 
@@ -186,7 +184,7 @@ During training, the model achieved approximately 92.66% validation accuracy.
 
 
 
-Generative AI
+\#Generative AI:
 
 
 
@@ -212,7 +210,7 @@ The Gemini API key is stored as an environment variable and is not included dire
 
 
 
-Application
+\#Application:
 
 
 
@@ -224,7 +222,7 @@ The user can upload a leaf image through the web interface and receive the predi
 
 
 
-The application displays:
+\#The application displays:
 
 
 
@@ -238,7 +236,7 @@ The application displays:
 
 
 
-Project Structure
+\#Project Structure:
 
 
 
@@ -268,7 +266,7 @@ AI-Crop-Disease-Prediction/
 
 
 
-File Description
+\#File Description:
 
 
 
@@ -308,7 +306,7 @@ Contains files and folders that should not be uploaded to GitHub, such as the vi
 
 
 
-How to Run the Project
+\#How to Run the Project:
 
 
 
@@ -392,7 +390,7 @@ The application will open in the browser at the local Streamlit address.
 
 
 
-Model Performance
+\#Model Performance:
 
 
 
@@ -412,7 +410,7 @@ For example, during testing, the model correctly predicted a Tomato Early Blight
 
 
 
-Limitations
+\#Limitations:
 
 
 
@@ -428,7 +426,7 @@ The confidence score is also not a guarantee that the prediction is correct. Rea
 
 
 
-Future Improvements
+\#Future Improvements:
 
 
 
@@ -456,7 +454,7 @@ Some possible improvements for this project include:
 
 
 
-Author
+\#Author:
 
 
 
@@ -466,7 +464,7 @@ Prakhar Sharma
 
 GitHub:
 
-\[https://github.com/prakhar1002](https://github.com/prakhar1002)
+https://github.com/prakhar1002](https://github.com/prakhar1002
 
 
 
