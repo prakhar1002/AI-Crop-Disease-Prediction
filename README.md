@@ -1,8 +1,8 @@
-\# AI-Based Crop Disease Prediction System
+AI-Based Crop Disease Prediction System
 
 
 
-\## About the Project
+About the Project
 
 
 
@@ -10,19 +10,19 @@ This project is an AI-based crop disease prediction system developed as part of 
 
 
 
-The main idea behind the project is to use a plant leaf image as input and predict whether the plant is affected by a particular disease. After making the prediction, the application also uses Generative AI to provide a simple explanation of the predicted condition, including its symptoms and general management practices.
+The main purpose of this project is to predict crop diseases from leaf images using a deep learning model. The user can upload an image of a plant leaf, and the system predicts the most likely disease along with the confidence of the prediction.
 
 
 
-I used the PlantVillage dataset for training the image classification model. For the classification part, I used MobileNetV2 with transfer learning because it provides a good pretrained image feature extractor without requiring the model to be trained completely from scratch.
+After the prediction, Generative AI is used to provide a simple explanation of the predicted condition, including information about symptoms and general management practices.
 
 
 
-The final application is built using Streamlit, which provides a simple web interface where a user can upload a leaf image and see the prediction.
+For the image classification part, I used the PlantVillage dataset and MobileNetV2 with transfer learning. The final application was developed using Streamlit.
 
 
 
-\## What the System Does
+How the System Works
 
 
 
@@ -36,153 +36,21 @@ The application follows these steps:
 
 3\. The trained MobileNetV2 model processes the image.
 
-4\. The model predicts one of the 15 supported classes.
+4\. The model predicts one of the supported crop/disease classes.
 
-5\. The application displays the predicted class and confidence score.
+5\. The prediction and confidence score are displayed.
 
-6\. Gemini Generative AI generates an explanation of the predicted disease.
+6\. The predicted disease is passed to Gemini Generative AI.
 
+7\. Gemini generates a simple explanation of the predicted condition.
 
 
-\## Technologies Used
 
+The overall workflow is:
 
 
-\- Python
 
-\- TensorFlow
-
-\- Keras
-
-\- MobileNetV2
-
-\- Streamlit
-
-\- NumPy
-
-\- Pillow
-
-\- Google Gemini API
-
-\- PlantVillage Dataset
-
-\- Git and GitHub
-
-
-
-\## Dataset
-
-
-
-The model was trained using the PlantVillage dataset.
-
-
-
-The project currently uses 15 classes:
-
-
-
-1\. Tomato Septoria Leaf Spot
-
-2\. Potato Early Blight
-
-3\. Tomato Mosaic Virus
-
-4\. Potato Healthy
-
-5\. Tomato Early Blight
-
-6\. Pepper Bell Healthy
-
-7\. Tomato Target Spot
-
-8\. Tomato Bacterial Spot
-
-9\. Pepper Bell Bacterial Spot
-
-10\. Tomato Leaf Mold
-
-11\. Tomato Late Blight
-
-12\. Tomato Spider Mites
-
-13\. Tomato Healthy
-
-14\. Potato Late Blight
-
-15\. Tomato Yellow Leaf Curl Virus
-
-
-
-\## Model
-
-
-
-For image classification, I used MobileNetV2 with ImageNet pretrained weights.
-
-
-
-The pretrained layers were frozen and a new classification layer was added for the 15 classes used in this project.
-
-
-
-The model was trained using TensorFlow and saved in Keras format.
-
-
-
-Model file:
-
-
-
-`crop\_disease\_model.keras`
-
-
-
-During training, the model achieved approximately 92.66% validation accuracy.
-
-
-
-\## Generative AI
-
-
-
-Generative AI is used after the disease prediction stage.
-
-
-
-The predicted disease and model confidence are sent to the Gemini API along with a prompt asking for a simple explanation. The response can include information about what the condition is, common symptoms, and general prevention or management practices.
-
-
-
-The Gemini API key is stored as an environment variable instead of being written directly inside the source code.
-
-
-
-\## Application
-
-
-
-The application is built with Streamlit.
-
-
-
-The main interface allows the user to upload a leaf image and then displays:
-
-
-
-\- Predicted disease
-
-\- Model confidence
-
-\- GenAI-generated explanation
-
-
-
-The basic workflow is:
-
-
-
-```text
+&#x20; text
 
 Leaf Image
 
@@ -222,87 +90,43 @@ Disease Explanation
 
 
 
-\# AI-Based Crop Disease Prediction System
+Technologies Used
 
 
 
-\## About the Project
+\* Python
+
+\* TensorFlow
+
+\* Keras
+
+\* MobileNetV2
+
+\* Streamlit
+
+\* NumPy
+
+\* Pillow
+
+\* Google Gemini API
+
+\* PlantVillage Dataset
+
+\* Git
+
+\* GitHub
 
 
 
-This project is an AI-based crop disease prediction system developed as part of my IBM Generative AI course.
+Dataset
 
 
 
-The main idea behind the project is to use a plant leaf image as input and predict whether the plant is affected by a particular disease. After making the prediction, the application also uses Generative AI to provide a simple explanation of the predicted condition, including its symptoms and general management practices.
+The project uses the PlantVillage dataset for training the image classification model.
 
 
 
-I used the PlantVillage dataset for training the image classification model. For the classification part, I used MobileNetV2 with transfer learning because it provides a good pretrained image feature extractor without requiring the model to be trained completely from scratch.
-
-
-
-The final application is built using Streamlit, which provides a simple web interface where a user can upload a leaf image and see the prediction.
-
-
-
-\## What the System Does
-
-
-
-The application follows these steps:
-
-
-
-1\. The user uploads an image of a crop leaf.
-
-2\. The image is resized to 224 × 224 pixels.
-
-3\. The trained MobileNetV2 model processes the image.
-
-4\. The model predicts one of the 15 supported classes.
-
-5\. The application displays the predicted class and confidence score.
-
-6\. Gemini Generative AI generates an explanation of the predicted disease.
-
-
-
-\## Technologies Used
-
-
-
-\- Python
-
-\- TensorFlow
-
-\- Keras
-
-\- MobileNetV2
-
-\- Streamlit
-
-\- NumPy
-
-\- Pillow
-
-\- Google Gemini API
-
-\- PlantVillage Dataset
-
-\- Git and GitHub
-
-
-
-\## Dataset
-
-
-
-The model was trained using the PlantVillage dataset.
-
-
-
-The project currently uses 15 classes:
+The current model supports 15 classes:
 
 
 
@@ -338,27 +162,23 @@ The project currently uses 15 classes:
 
 
 
-\## Model
+Model
 
 
 
-For image classification, I used MobileNetV2 with ImageNet pretrained weights.
+MobileNetV2 was used as the base model for image classification.
 
 
 
-The pretrained layers were frozen and a new classification layer was added for the 15 classes used in this project.
+The model uses transfer learning with pretrained ImageNet weights. The pretrained layers were frozen and a new classification layer was added for the 15 classes used in this project.
 
 
 
-The model was trained using TensorFlow and saved in Keras format.
+The trained model is saved as:
 
 
 
-Model file:
-
-
-
-`crop\_disease\_model.keras`
+crop\_disease\_model.keras
 
 
 
@@ -366,307 +186,61 @@ During training, the model achieved approximately 92.66% validation accuracy.
 
 
 
-\## Generative AI
+Generative AI
 
 
 
-Generative AI is used after the disease prediction stage.
+Generative AI is used after the image classification stage.
 
 
 
-The predicted disease and model confidence are sent to the Gemini API along with a prompt asking for a simple explanation. The response can include information about what the condition is, common symptoms, and general prevention or management practices.
+Once the disease has been predicted, the disease name and confidence score are provided to the Gemini API. Gemini then generates a simple explanation that can include:
 
 
 
-The Gemini API key is stored as an environment variable instead of being written directly inside the source code.
+\* What the condition means
 
+\* Common symptoms
 
+\* General prevention and management practices
 
-\## Application
+\* A reminder that AI predictions should be verified by an agricultural professional
 
 
 
-The application is built with Streamlit.
+The Gemini API key is stored as an environment variable and is not included directly in the source code.
 
 
 
-The main interface allows the user to upload a leaf image and then displays:
+Application
 
 
 
-\- Predicted disease
+The application is built using Streamlit.
 
-\- Model confidence
 
-\- GenAI-generated explanation
 
+The user can upload a leaf image through the web interface and receive the prediction and GenAI explanation.
 
 
-The basic workflow is:
 
+The application displays:
 
 
-```text
 
-Leaf Image
+\* Uploaded leaf image
 
-&#x20;   |
+\* Predicted disease
 
-&#x20;   v
+\* Confidence score
 
-Image Preprocessing
+\* Generative AI explanation
 
-&#x20;   |
 
-&#x20;   v
 
-MobileNetV2 Model
+Project Structure
 
-&#x20;   |
 
-&#x20;   v
-
-Disease Prediction
-
-&#x20;   |
-
-&#x20;   +----> Confidence Score
-
-&#x20;   |
-
-&#x20;   v
-
-Gemini Generative AI
-
-&#x20;   |
-
-&#x20;   v
-
-Disease Explanation# AI-Based Crop Disease Prediction System
-
-
-
-\## About the Project
-
-
-
-This project is an AI-based crop disease prediction system developed as part of my IBM Generative AI course.
-
-
-
-The main idea behind the project is to use a plant leaf image as input and predict whether the plant is affected by a particular disease. After making the prediction, the application also uses Generative AI to provide a simple explanation of the predicted condition, including its symptoms and general management practices.
-
-
-
-I used the PlantVillage dataset for training the image classification model. For the classification part, I used MobileNetV2 with transfer learning because it provides a good pretrained image feature extractor without requiring the model to be trained completely from scratch.
-
-
-
-The final application is built using Streamlit, which provides a simple web interface where a user can upload a leaf image and see the prediction.
-
-
-
-\## What the System Does
-
-
-
-The application follows these steps:
-
-
-
-1\. The user uploads an image of a crop leaf.
-
-2\. The image is resized to 224 × 224 pixels.
-
-3\. The trained MobileNetV2 model processes the image.
-
-4\. The model predicts one of the 15 supported classes.
-
-5\. The application displays the predicted class and confidence score.
-
-6\. Gemini Generative AI generates an explanation of the predicted disease.
-
-
-
-\## Technologies Used
-
-
-
-\- Python
-
-\- TensorFlow
-
-\- Keras
-
-\- MobileNetV2
-
-\- Streamlit
-
-\- NumPy
-
-\- Pillow
-
-\- Google Gemini API
-
-\- PlantVillage Dataset
-
-\- Git and GitHub
-
-
-
-\## Dataset
-
-
-
-The model was trained using the PlantVillage dataset.
-
-
-
-The project currently uses 15 classes:
-
-
-
-1\. Tomato Septoria Leaf Spot
-
-2\. Potato Early Blight
-
-3\. Tomato Mosaic Virus
-
-4\. Potato Healthy
-
-5\. Tomato Early Blight
-
-6\. Pepper Bell Healthy
-
-7\. Tomato Target Spot
-
-8\. Tomato Bacterial Spot
-
-9\. Pepper Bell Bacterial Spot
-
-10\. Tomato Leaf Mold
-
-11\. Tomato Late Blight
-
-12\. Tomato Spider Mites
-
-13\. Tomato Healthy
-
-14\. Potato Late Blight
-
-15\. Tomato Yellow Leaf Curl Virus
-
-
-
-\## Model
-
-
-
-For image classification, I used MobileNetV2 with ImageNet pretrained weights.
-
-
-
-The pretrained layers were frozen and a new classification layer was added for the 15 classes used in this project.
-
-
-
-The model was trained using TensorFlow and saved in Keras format.
-
-
-
-Model file:
-
-
-
-`crop\_disease\_model.keras`
-
-
-
-During training, the model achieved approximately 92.66% validation accuracy.
-
-
-
-\## Generative AI
-
-
-
-Generative AI is used after the disease prediction stage.
-
-
-
-The predicted disease and model confidence are sent to the Gemini API along with a prompt asking for a simple explanation. The response can include information about what the condition is, common symptoms, and general prevention or management practices.
-
-
-
-The Gemini API key is stored as an environment variable instead of being written directly inside the source code.
-
-
-
-\## Application
-
-
-
-The application is built with Streamlit.
-
-
-
-The main interface allows the user to upload a leaf image and then displays:
-
-
-
-\- Predicted disease
-
-\- Model confidence
-
-\- GenAI-generated explanation
-
-
-
-The basic workflow is:
-
-
-
-```text
-
-Leaf Image
-
-&#x20;   |
-
-&#x20;   v
-
-Image Preprocessing
-
-&#x20;   |
-
-&#x20;   v
-
-MobileNetV2 Model
-
-&#x20;   |
-
-&#x20;   v
-
-Disease Prediction
-
-&#x20;   |
-
-&#x20;   +----> Confidence Score
-
-&#x20;   |
-
-&#x20;   v
-
-Gemini Generative AI
-
-&#x20;   |
-
-&#x20;   v
-
-Disease Explanation
-
-
-
-Project Files
 
 AI-Crop-Disease-Prediction/
 
@@ -684,27 +258,53 @@ AI-Crop-Disease-Prediction/
 
 ├── README.md
 
-└── .gitignore
+├── .gitignore
+
+│
+
+└── venv/
 
 
 
-app.py contains the Streamlit application and prediction logic.
+
+
+File Description
 
 
 
-crop\_disease\_model.keras is the trained image classification model.
+app.py
+
+Contains the Streamlit application, image processing, disease prediction and GenAI integration.
 
 
 
-class\_names.json contains the class names used by the model.
+class\_names.json
+
+Contains the names of the 15 classes used by the model.
 
 
 
-disease\_info.py contains the basic disease information used by the application.
+crop\_disease\_model.keras
+
+The trained MobileNetV2-based crop disease classification model.
 
 
 
-requirements.txt contains the Python packages required to run the project.
+disease\_info.py
+
+Contains disease information used by the application.
+
+
+
+requirements.txt
+
+Contains the Python packages required to run the project.
+
+
+
+.gitignore
+
+Contains files and folders that should not be uploaded to GitHub, such as the virtual environment and secret files.
 
 
 
@@ -712,7 +312,7 @@ How to Run the Project
 
 
 
-First, clone the repository:
+1\. Clone the repository
 
 
 
@@ -720,7 +320,7 @@ git clone https://github.com/prakhar1002/AI-Crop-Disease-Prediction.git
 
 
 
-Move into the project folder:
+2\. Open the project folder
 
 
 
@@ -728,7 +328,11 @@ cd AI-Crop-Disease-Prediction
 
 
 
-Create a virtual environment:
+3\. Create a virtual environment
+
+
+
+On Windows:
 
 
 
@@ -736,7 +340,7 @@ python -m venv venv
 
 
 
-Activate it on Windows:
+4\. Activate the virtual environment
 
 
 
@@ -744,7 +348,7 @@ venv\\Scripts\\activate
 
 
 
-Install the required packages:
+5\. Install the required packages
 
 
 
@@ -752,7 +356,15 @@ pip install -r requirements.txt
 
 
 
-Set the Gemini API key as an environment variable:
+6\. Configure the Gemini API
+
+
+
+Create a Gemini API key and store it as an environment variable.
+
+
+
+On Windows:
 
 
 
@@ -760,11 +372,15 @@ setx GEMINI\_API\_KEY "YOUR\_API\_KEY"
 
 
 
-After setting the key, open a new terminal and activate the virtual environment again.
+After setting the environment variable, open a new terminal.
 
 
 
-Then start the application:
+Do not put the actual API key directly inside `app.py` or upload it to GitHub.
+
+
+
+7\. Run the application
 
 
 
@@ -772,7 +388,27 @@ streamlit run app.py
 
 
 
-The Streamlit application will open in the browser.
+The application will open in the browser at the local Streamlit address.
+
+
+
+Model Performance
+
+
+
+The model achieved approximately:
+
+
+
+Validation Accuracy: 92.66%
+
+
+
+The actual prediction confidence can vary depending on the image provided to the application.
+
+
+
+For example, during testing, the model correctly predicted a Tomato Early Blight image with a confidence of approximately 99%.
 
 
 
@@ -780,15 +416,15 @@ Limitations
 
 
 
-This project is mainly intended for educational purposes and demonstration of AI and Generative AI concepts.
+This project is primarily developed for educational purposes and demonstration of AI and Generative AI concepts.
 
 
 
-The model was trained on the classes available in the selected PlantVillage dataset, so it cannot identify every possible crop or plant disease.
+The model is limited to the 15 classes included in the selected dataset. It cannot identify every possible crop or plant disease.
 
 
 
-The prediction confidence is also not a guarantee that the diagnosis is correct. For real agricultural decisions, the result should be verified by a qualified agricultural professional.
+The confidence score is also not a guarantee that the prediction is correct. Real agricultural decisions should be made with appropriate professional guidance.
 
 
 
@@ -796,25 +432,29 @@ Future Improvements
 
 
 
-Some possible improvements for the project are:
+Some possible improvements for this project include:
 
 
 
-Add more crop and disease classes.
+\* Adding more crop and disease classes
 
-Use a larger and more diverse dataset.
+\* Training with a larger and more diverse dataset
 
-Improve the model through fine-tuning.
+\* Fine-tuning the MobileNetV2 model
 
-Add prediction history.
+\* Improving the user interface
 
-Add support for multiple images.
+\* Adding prediction history
 
-Improve the user interface.
+\* Allowing multiple images to be analyzed
 
-Provide more detailed disease information through Generative AI.
+\* Adding more detailed GenAI-based information
 
-Deploy the application so it can be accessed online.
+\* Deploying the application online
+
+\* Adding support for additional crops
+
+
 
 Author
 
@@ -824,5 +464,15 @@ Prakhar Sharma
 
 
 
-GitHub: https://github.com/prakhar1002
+GitHub:
+
+\[https://github.com/prakhar1002](https://github.com/prakhar1002)
+
+
+
+Project Repository
+
+
+
+https://github.com/prakhar1002/AI-Crop-Disease-Prediction
 
